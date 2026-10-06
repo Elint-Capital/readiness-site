@@ -1,0 +1,17 @@
+/* SBA lane layer (S-045). Loaded after allgov.css on lender-facing pages; allgov.css stays byte-identical.
+   Older-user bar: 18px body, 24px and larger headings, 48px targets. Words, not icons, carry every control. */
+:root {
+  --ag-fs-xs: 14px;  --ag-lh-xs: 20px;
+  --ag-fs-sm: 16px;  --ag-lh-sm: 24px;
+  --ag-fs-md: 18px;  --ag-lh-md: 28px;
+  --ag-fs-lg: 24px;  --ag-lh-lg: 32px;
+}
+body { font-size: 18px; line-height: 28px; }
+main h1, main h2, main h3,
+.ag-h1, .ag-h2, .ag-h3, .ag-card-title, .ag-page-header h1 { font-size: 24px; line-height: 32px; }
+main h1, .ag-h1, .ag-page-header h1 { font-size: 28px; line-height: 36px; }
+.ag-btn, .ag-btn--sm, main select, main summary, main input:not([type="checkbox"]):not([type="radio"]) { min-height: 48px; height: auto; font-size: 18px; }
+.ag-btn, .ag-btn--sm { padding-top: 0; padding-bottom: 0; }
+@media (max-width: 599px) { .ag-btn, .ag-btn--sm { min-height: 48px; } }
+/* Table header text: 4.5:1 on the header ground (axe color-contrast). */
+.ag-table th { color: var(--ag-text-2); }
