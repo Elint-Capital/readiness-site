@@ -20,7 +20,7 @@
     root.style.setProperty("--ag-accent-hover", second.value);
     root.style.setProperty("--ag-on-accent", ink(accent.value));
     mark.textContent = n;
-    host.textContent = (domain.value.trim() || "readiness.example") + "/start";
+    host.textContent = (domain.value.trim() || "readiness.example") + ".html";
     document.querySelectorAll(".ag-tenant").forEach(function (t) { t.textContent = n; });
   }
   [name, accent, second, domain].forEach(function (i) { i.addEventListener("input", apply); });
