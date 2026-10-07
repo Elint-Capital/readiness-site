@@ -46,7 +46,7 @@
     </div>
     <div class="ag-nav-footer">
       <strong>Your Firm</strong>
-      as of <span class="ag-num">2026-10-06</span>
+      as of <span class="ag-num">2026-10-07</span>
     </div>
   </nav>
   <main class="ag-content" id="main">
@@ -63,7 +63,7 @@
     <div class="ag-stats">
       <div class="ag-stat">
         <span class="ag-stat-label">Ready</span>
-        <span class="ag-stat-value ag-num">23</span>
+        <span class="ag-stat-value ag-num">22</span>
       </div>
       <div class="ag-stat">
         <span class="ag-stat-label">Need attention</span>
@@ -92,7 +92,7 @@
 <tr><td><span class="ag-num">4</span></td><td>Early Default Determination</td><td><strong>Needs attention</strong></td><td>M5-TAB07-005, M5-TAB07-002, M5-TAB07-001, M5-TAB07-003</td></tr>
 <tr><td><span class="ag-num">5</span></td><td>Business Eligibility</td><td><strong>No rule tested</strong></td><td>no rule tested on this file</td></tr>
 <tr><td><span class="ag-num">6</span></td><td>Obligors</td><td><strong>Ready</strong></td><td>M5-TAB04-001, M5-TAB04-002</td></tr>
-<tr><td><span class="ag-num">7</span></td><td>Use of Proceeds</td><td><strong>Ready</strong></td><td>M5-TAB05-001, M5-TAB05-003</td></tr>
+<tr><td><span class="ag-num">7</span></td><td>Use of Proceeds</td><td><strong>Ready</strong></td><td>M5-TAB05-003</td></tr>
 <tr><td><span class="ag-num">8</span></td><td>Collateral</td><td><strong>Ready</strong></td><td>M5-TAB04-003, M6-CPC-003, M6-SITE-001, M6-PLAN-001</td></tr>
 </tbody></table></div>
     </section>
@@ -101,7 +101,7 @@
       <p>We rebuild the spreads, add-backs, debt service coverage, global cash flow, projections against history, a stress test, the equity injection trace, the disbursement tie-out and the dates from the documents in the file. Every number is a formula, and every input carries the file, sheet and source line it came from.</p><p class="ag-muted">Sheets in the workbook:</p><ol><li>Inputs</li><li>Verify</li><li>Thresholds</li><li>Spreads</li><li>Add-backs</li><li>DSCR</li><li>Global Cash Flow</li><li>Projections vs Historical</li><li>Stress</li><li>Equity Injection Trace</li><li>Disbursement Tie-out</li><li>Dates</li><li>Findings</li><li>Sources</li></ol><div class="ag-expert-only"><p class="ag-muted">Verification table, from the demonstration file's workbook. Threshold entries cite their source and status; the stress test is a practice, not an SBA requirement.</p><div class="ag-table-wrap" tabindex="0" role="region" aria-label="Workbook verification table"><table class="ag-table ag-table--dense"><caption class="ag-sr-only">How each workbook number is verified to its source cell</caption><thead><tr><th scope="col">Sheet</th><th scope="col">Cell</th><th scope="col">Output</th><th scope="col">Formula</th><th scope="col">Depends on Inputs (key · locator)</th></tr></thead><tbody><tr><td>Spreads</td><td>B4</td><td>Spreads Gross profit 2023</td><td>=B2-B3</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5</td></tr><tr><td>Spreads</td><td>B6</td><td>Spreads EBITDA 2023</td><td>=B4-B5</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5 | fin.2023.opex · Historical_Financials.xlsx · sheet Income Statement · cell B6</td></tr><tr><td>Spreads</td><td>B9</td><td>Spreads Net income (computed) 2023</td><td>=B6-B7-B8</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5 | fin.2023.opex · Historical_Financials.xlsx · sheet Income Statement · cell B6 | fin.2023.interest · Historical_Financials.xlsx · sheet Income Statement · cell B7 | fin.2023.depreciation · Historical_Financials.xlsx · sheet Income Statement · cell B8</td></tr><tr><td>Spreads</td><td>C4</td><td>Spreads Gross profit 2024</td><td>=C2-C3</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5</td></tr><tr><td>Spreads</td><td>C6</td><td>Spreads EBITDA 2024</td><td>=C4-C5</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5 | fin.2024.opex · Historical_Financials.xlsx · sheet Income Statement · cell C6</td></tr><tr><td>Spreads</td><td>C9</td><td>Spreads Net income (computed) 2024</td><td>=C6-C7-C8</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5 | fin.2024.opex · Historical_Financials.xlsx · sheet Income Statement · cell C6 | fin.2024.interest · Historical_Financials.xlsx · sheet Income Statement · cell C7 | fin.2024.depreciation · Historical_Financials.xlsx · sheet Income Statement · cell C8</td></tr><tr><td>Spreads</td><td>D4</td><td>Spreads Gross profit 2025</td><td>=D2-D3</td><td>fin.2025.revenue · Historical_Financials.xlsx · sheet Income Statement · cell D4 | fin.2025.cogs · Historical_Financials.xlsx · sheet Income Statement · cell D5</td></tr><tr><td>Spreads</td><td>D6</td><td>Spreads EBITDA 2025</td><td>=D4-D5</td><td>fin.2025.revenue · Historical_Financials.xlsx · sheet Income Statement · cell D4 | fin.2025.cogs · Historical_Financials.xlsx · sheet Income Statement · cell D5 | fin.2025.opex · Historical_Financials.xlsx · sheet Income Statement · cell D6</td></tr></tbody></table></div></div>
     </section>
     <h2 class="ag-h2">Findings, worst first</h2>
-    <p class="ag-muted">26 findings, every one produced by the review engine on this file (engine output cobalt-ridge, digest <span class="ag-loc ag-mono">247ad6607dd7</span>). 49 rules in scope could not be tested on born-digital documents in this version and 49 do not apply to this file; neither is shown as a finding.</p>
+    <p class="ag-muted">25 findings, every one produced by the review engine on this file (engine output cobalt-ridge, digest <span class="ag-loc ag-mono">a60222136191</span>). 48 rules in scope could not be tested on born-digital documents in this version and 51 do not apply to this file; neither is shown as a finding.</p>
     <section class="ag-section" data-finding="M5-TAB07-005" aria-labelledby="f1">
       <div class="ag-card-header"><h3 class="ag-card-title" id="f1">The equity injection cannot be traced to its source</h3></div>
       <p>Status: <strong>Needs attention</strong> <span class="ag-muted">SBA can deny or reduce the guaranty for this</span></p>
@@ -246,24 +246,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB04-003</span> · Innovative Financing Solutions (top repair/denial reasons); Windsor Advantage #4; Coleman Report repairs page <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Required lien positions obtained and perfected as authorized; failure to perfect, or perfecting in the wrong position, is a leading repair reason.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB04-003.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB05-001" aria-labelledby="f10">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f10">Tab 5 Disbursements: documentation supporting each disbursement as required by the SOP 50 10 in effect at the </h3></div>
-      <p>Status: <strong>Ready</strong></p>
-      <dl class="ag-kv ag-kv--left">
-        <dt>What we checked</dt><dd>Whether the file holds: settlement sheet (Form 1050)</dd>
-        <dt>What we found</dt><dd>Present: settlement sheet (Form 1050). Presence only; content not tested in v0. Not checked in v0: Invoices, checks, wires per disbursement.</dd>
-        <dt>Where in the file</dt><dd><span class="ag-loc ag-mono">SBA_Form_1050_Settlement_Sheet.docx</span></dd>
-        <dt>Why it matters</dt><dd>Tab 5 Disbursements: documentation supporting each disbursement as required by the SOP 50 10 in effect at the time of the guaranty purchase request (UPP v Dec-2024 language), tied to authorized use of proceeds.</dd>
-        <dt>Why believe this</dt><dd><span class="ag-muted">5 corpus entries name this failure.</span><ul><li><strong>D-091</strong> (deficiencies): Proceeds disbursed inconsistently with the authorization or credit-memo use of funds (MULTI-SOURCE, 18 sources)</li><li><strong>OIG ROM 11-06</strong> (OIG-CORPUS): Repayment ability, ineligible use of proceeds, questionable eligibility, improper guaranty amount; SBA officers missed 3 (ORIGINATION/PURCHASE)</li><li><strong>CA-016</strong> (CREDIT-ANALYSIS-STANDARDS): Global cash flow: consider affiliates&#x27; cash flow and guarantors&#x27; personal obligations. Whether the SOP text *mandates* a global cash flow analysis could not be confirmed.…</li><li><strong>AE-003</strong> (CREDIT-ANALYSIS-STANDARDS): Unsupported add-backs (personal income, guaranteed payments)</li><li><strong>OC-017</strong> (OCRM-PARRIS-CORPUS): Working-capital disbursements not monitored or documented (other than normal operating expenses)</li></ul></dd>
-        <dt>Rule status</dt><dd class="ag-muted">Starfield 2025-01 (UPP Tab 7 Disbursement Documentation); SBA tab name — rule status PRACTICE</dd>
-        
-      </dl>
-      <details><summary>What does this mean?</summary><p>Every dollar paid out at closing needs a paper behind it.</p></details>
-      <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB05-001</span> · Starfield 2025-01 (UPP Tab 7 Disbursement Documentation); SBA tab name <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Tab 5 Disbursements: documentation supporting each disbursement as required by the SOP 50 10 in effect at the time of the guaranty purchase request (UPP v Dec-2024 language), tied to authorized use of proceeds.</p></details>
-      <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB05-001.</p>
-    </section>
-    <section class="ag-section" data-finding="M5-TAB06-001" aria-labelledby="f11">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f11">Form 1149 transcript is present and signed</h3></div>
+    <section class="ag-section" data-finding="M5-TAB06-001" aria-labelledby="f10">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f10">Form 1149 transcript is present and signed</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>A signed Form 1149 transcript of account</dd>
@@ -278,8 +262,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB06-001</span> · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.5 (Tab 3) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: UPP Tab 3: attach a certified copy of the Transcript of Account itemizing each disbursement, payment and recovery. SBA Form 1149 is the Agency&#x27;s preferred form; a lender equivalent is acceptable. Identify each Section 1112 debt-relief payment; if the ending balance does not match the 1502, explain.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB06-001.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB07-001" aria-labelledby="f12">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f12">Not an early default (20 months)</h3></div>
+    <section class="ag-section" data-finding="M5-TAB07-001" aria-labelledby="f11">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f11">Not an early default (20 months)</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Months from final disbursement to first uncured default (early default if under 18)</dd>
@@ -294,8 +278,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB07-001</span> · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.6 (Tab 4) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Early default = default within 18 months of the initial disbursement. If the final disbursement was more than 6 months after the initial disbursement, the 18 months run from the final disbursement (a revolving line is fully disbursed at initial disbursement). A borrower who cures and makes scheduled payments for 12 months after the 18 months (30 months) is not an early default. Tab 4 collects the dates and the early-default events.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB07-001.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB07-003" aria-labelledby="f13">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f13">IRS transcripts are in the file</h3></div>
+    <section class="ag-section" data-finding="M5-TAB07-003" aria-labelledby="f12">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f12">IRS transcripts are in the file</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>IRS tax transcripts verifying the financial information relied on are in the purchase file</dd>
@@ -310,8 +294,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB07-003</span> · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.6 (Tab 4); IVES/4506-C mechanics: Starfield 2024-03 (secondary) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: UPP Tab 4 (verification of financial information): attach IRS tax transcripts or business tax returns, as the SOP 50 10 program-type rules in effect at approval require, for the last 3 years in operation (all years if start-up). For loans over $350,000.00 also attach reconciliation of applicant financials with resolution of discrepancies, interim financial statements, and any IRS filing extension with evidence of estimated-tax payment. IVES/4506-C/8821 mechanics remain secondary-source.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB07-003.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TIME-001" aria-labelledby="f14">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f14">Lender may demand purchase only if the borrower is in default on any installment for more than 60 calendar day</h3></div>
+    <section class="ag-section" data-finding="M5-TIME-001" aria-labelledby="f13">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f13">Lender may demand purchase only if the borrower is in default on any installment for more than 60 calendar day</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: transcript of account (Form 1149)</dd>
@@ -326,8 +310,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TIME-001</span> · 13 CFR 120.520(a)(1) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Lender may demand purchase only if the borrower is in default on any installment for more than 60 calendar days (or less if SBA agrees) and default is uncured; also upon federal bankruptcy once 60 days have passed since last full installment. Right lapses if borrower cures before the request.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TIME-001.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TIME-004" aria-labelledby="f15">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f15">The request is inside the 180-day window (0 days after maturity)</h3></div>
+    <section class="ag-section" data-finding="M5-TIME-004" aria-labelledby="f14">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f14">The request is inside the 180-day window (0 days after maturity)</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Days from loan maturity to the purchase-request date (limit 180)</dd>
@@ -342,8 +326,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TIME-004</span> · 13 CFR 120.524(a)(8) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Purchase request must be made within 180 days after loan maturity (exception: liquidation or debt collection litigation ongoing); otherwise SBA is released from liability.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TIME-004.</p>
     </section>
-    <section class="ag-section" data-finding="M6-CPC-003" aria-labelledby="f16">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f16">Liens must be maintained/renewed</h3></div>
+    <section class="ag-section" data-finding="M6-CPC-003" aria-labelledby="f15">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f15">Liens must be maintained/renewed</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: UCC filing</dd>
@@ -358,8 +342,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M6-CPC-003</span> · Windsor Advantage #5 (&#x27;improper lien renewals&#x27;); UCC statute not cited here <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Liens must be maintained/renewed (e.g., UCC continuation within 6-month window); improper lien renewal/lapse is a documented repair reason.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M6-CPC-003.</p>
     </section>
-    <section class="ag-section" data-finding="M6-SITE-001" aria-labelledby="f17">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f17">The site visit came 40 days after the default</h3></div>
+    <section class="ag-section" data-finding="M6-SITE-001" aria-labelledby="f16">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f16">The site visit came 40 days after the default</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Days from the payment-default date to the site-visit date (limit 60)</dd>
@@ -374,8 +358,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M6-SITE-001</span> · SBA NGPC liquidation process page <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Site visit must be performed within 60 days of an unremedied payment default, or sooner if assets of significant value could easily be moved or depleted. (SBA page statement is under SOP 50 57 series; confirm section in SOP 50 57 4.)</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M6-SITE-001.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB01-002" aria-labelledby="f18">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f18">Demand amounts must tie to the Transcript of Account and Loan Authorization.</h3></div>
+    <section class="ag-section" data-finding="M5-TAB01-002" aria-labelledby="f17">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f17">Demand amounts must tie to the Transcript of Account and Loan Authorization.</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: transcript of account (Form 1149)</dd>
@@ -390,8 +374,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB01-002</span> · Not stated in UPP v5.3 (texts/UPP-v5.3.md p.5 asks only for an explanation when the ending balance on the Transcript of Account does not match the 1502); Tab 1 demand amounts tying to Tab 3 and the Loan Authorization is practice <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Demand amounts (principal, interest, per diem, guaranty %) must tie to the Transcript of Account (Tab 6) and Loan Authorization (Tab 2).</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB01-002.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB02-002" aria-labelledby="f19">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f19">UPP Tab 1: attach a copy of the complete original credit memorandum and any modifications.</h3></div>
+    <section class="ag-section" data-finding="M5-TAB02-002" aria-labelledby="f18">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f18">UPP Tab 1: attach a copy of the complete original credit memorandum and any modifications.</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: credit memo</dd>
@@ -406,8 +390,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB02-002</span> · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.2 (Tab 1) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: UPP Tab 1: attach a copy of the complete original credit memorandum and any modifications. (Analysis under Credit Elsewhere / Personal Resources Test is a separate SOP requirement, not stated in the UPP.)</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB02-002.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB05-003" aria-labelledby="f20">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f20">Disbursement dates and amounts reconcile to Form 1149 disbursement history and to the final-disbursement date </h3></div>
+    <section class="ag-section" data-finding="M5-TAB05-003" aria-labelledby="f19">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f19">Disbursement dates and amounts reconcile to Form 1149 disbursement history and to the final-disbursement date </h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: transcript of account (Form 1149)</dd>
@@ -422,8 +406,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB05-003</span> · Form 1149 (SBA NGPC page); early-default definition (ROM 10-19) <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Disbursement dates and amounts (Tab 5) reconcile to Form 1149 disbursement history and to the final-disbursement date used for the 18-month early-default test.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB05-003.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB07-007" aria-labelledby="f21">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f21">Regardless of early-default status the current UPP requires the loan summary and supporting underwriting/finan</h3></div>
+    <section class="ag-section" data-finding="M5-TAB07-007" aria-labelledby="f20">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f20">Regardless of early-default status the current UPP requires the loan summary and supporting underwriting/finan</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: historical financial statements</dd>
@@ -438,8 +422,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB07-007</span> · Starfield 2026-02 <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Regardless of early-default status the current UPP requires the loan summary and supporting underwriting/financials/equity documentation with the request (2023 version &#x27;evolved&#x27;).</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB07-007.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TIME-006" aria-labelledby="f22">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f22">Loan was in liquidation status before the purchase request</h3></div>
+    <section class="ag-section" data-finding="M5-TIME-006" aria-labelledby="f21">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f21">Loan was in liquidation status before the purchase request</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>The loan was moved to liquidation status (code 5) on the SBA 1502 report before the purchase request</dd>
@@ -454,8 +438,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TIME-006</span> · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.2 (Tab 1 checklist), citing 13 CFR 120.520 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Before submitting a purchase request the lender must transfer the loan to liquidation status. The borrower must be in payment default on the Note for more than 60 calendar days unless SBA agreed otherwise in writing (13 CFR 120.520); the UPP asks the lender to check that the default exceeds 60 days OR that SBA approval is attached.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TIME-006.</p>
     </section>
-    <section class="ag-section" data-finding="M6-PLAN-001" aria-labelledby="f23">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f23">Formal liquidation plan prepared covering site-visit findings, workout feasibility, recoverable collateral val</h3></div>
+    <section class="ag-section" data-finding="M6-PLAN-001" aria-labelledby="f22">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f22">Formal liquidation plan prepared covering site-visit findings, workout feasibility, recoverable collateral val</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: liquidation plan</dd>
@@ -470,8 +454,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M6-PLAN-001</span> · Starfield 2023-11; SBA liquidation page; 13 CFR 120.540(b) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Formal liquidation plan prepared covering site-visit findings, workout feasibility, recoverable collateral value, liquidation methods, recovery from obligors, expense/recovery allocation, and other loans with same borrower. Submitted to SBA only for CLP loans (SBA Form 1979).</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M6-PLAN-001.</p>
     </section>
-    <section class="ag-section" data-finding="M6-SVC-006" aria-labelledby="f24">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f24">Payment default reporting: monthly SBA 1502 reports</h3></div>
+    <section class="ag-section" data-finding="M6-SVC-006" aria-labelledby="f23">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f23">Payment default reporting: monthly SBA 1502 reports</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: SBA 1502 status history</dd>
@@ -486,8 +470,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M6-SVC-006</span> · SBA liquidation page; Starfield 2026 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Payment default reporting: monthly SBA 1502 reports; loan must be in liquidation status (code 5) before purchase request.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M6-SVC-006.</p>
     </section>
-    <section class="ag-section" data-finding="M5-TAB06-003" aria-labelledby="f25">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f25">Transcript rate is in decimal format</h3></div>
+    <section class="ag-section" data-finding="M5-TAB06-003" aria-labelledby="f24">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f24">Transcript rate is in decimal format</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Interest-rate fields in the transcript use decimal format (.1025), not percent (10.25%)</dd>
@@ -502,8 +486,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M5-TAB06-003</span> · Starfield &amp; Smith 2026-02 (UPP Tab 4 note) <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Interest rate fields in current UPP transcript use decimal format (e.g., .0525), not percent.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M5-TAB06-003.</p>
     </section>
-    <section class="ag-section" data-finding="M6-WRAP-005" aria-labelledby="f26">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f26">Report paid-in-full as code &#x27;6&#x27; on monthly SBA 1502</h3></div>
+    <section class="ag-section" data-finding="M6-WRAP-005" aria-labelledby="f25">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f25">Report paid-in-full as code &#x27;6&#x27; on monthly SBA 1502</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: SBA 1502 status history</dd>
@@ -518,10 +502,13 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M6-WRAP-005</span> · SBA liquidation process page <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Report paid-in-full as code &#x27;6&#x27; on monthly SBA 1502; liquidation status is code &#x27;5&#x27;; notify SBA when requesting guaranty cancellation.</p></details>
       <p>Not sure what to do with this finding? <a href="tel:0000000000">Call us at (000) 000-0000</a> and mention rule M6-WRAP-005.</p>
     </section>
+    <section class="ag-section" id="feedback" aria-labelledby="feedback-t"><div class="ag-card-header"><h2 class="ag-card-title" id="feedback-t">Tell us what is wrong</h2></div>
+      <p>Say which page you were on and what you expected. Do not include a real borrower name or number.</p><a class="ag-btn" href="mailto:ceo@elintcapital.com?subject=Feedback%20on%20the%20review">Send feedback</a>
+    </section>
 
     <footer class="ag-page-footer">
       <span>This Readiness Review is a software tool the Lender uses to assist its own review of a loan file. It does not determine eligibility, creditworthiness, guaranty coverage, or compliance; it makes no representation to, and is not reviewed or endorsed by, the U.S. Small Business Administration. Under 13 CFR 120.180 the Lender remains solely responsible for compliance with SBA Loan Program Requirements in effect at the time of each action. Findings are indicators for the Lender&#x27;s judgment, not legal, accounting or credit advice. Citations refer to SBA documents by title, version and effective date; the Lender verifies the current text.</span>
-      <span class="ag-muted">Run id RR-202610062046-0556e889</span>
+      <span class="ag-muted">Run id RR-202610070243-1aca40ae</span>
       
     </footer>
   </main>
