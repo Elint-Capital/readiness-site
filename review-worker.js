@@ -33,13 +33,17 @@ onmessage = async (e) => {
     await ready;
     say("Reading the file");
     py.FS.mkdirTree("/in");
-    py.FS.writeFile("/in/file.zip", new Uint8Array(e.data.bytes));
+    py.FS.writeFile("/in/upload.bin", new Uint8Array(e.data.bytes));
+    py.globals.set("upload_name", String(e.data.name || "file.zip"));
     const t = performance.now();
     const out = py.runPython(`
 import json
 from pathlib import Path
-from engine.run import review
-review(Path('/in/file.zip'), Path('/out/run'), '', None, in_browser=True)
+from engine.run import review, package_single
+zp = Path('/in/upload.bin')
+if not upload_name.lower().endswith('.zip'):
+    zp = package_single(upload_name, zp.read_bytes(), Path('/in/file.zip'))
+review(zp, Path('/out/run'), '', None, in_browser=True)
 json.dumps({'contract': json.load(open('/out/run/findings.contract.json')),
             'html': open('/out/run/report.html').read()})`);
     postMessage({ type: "result", ms: Math.round(performance.now() - t), ...JSON.parse(out),
