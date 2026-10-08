@@ -18,6 +18,7 @@
   <svg class="ag-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
   <span>Invented company — a sample file. Every name, number and document on this site is invented.</span>
 </div>
+<div class="ag-notice" role="note"><span>Draft — not reviewed by a person — not for submission to SBA</span></div>
 <input type="checkbox" id="ag-nav-toggle" class="ag-nav-toggle" aria-hidden="true" tabindex="-1">
 <header class="ag-topbar">
   <label for="ag-nav-toggle" class="ag-nav-button" aria-label="Menu">
@@ -56,11 +57,11 @@
         <h1>Printable report</h1>
         <p class="ag-subtitle">Cobalt Ridge Fabrication LLC: 22 ready, 1 need attention, 0 missing, 2 need a person.</p>
       </div>
-      <div class="ag-page-actions"><a class="ag-btn ag-btn--primary" href="results-D.html">Back to the results</a></div>
+      <div class="ag-page-actions"><a class="ag-btn ag-btn--primary" href="results-D.html">Back to the results</a><button type="button" class="ag-btn" id="ag-download-pdf">Download PDF</button></div>
     </header>
 
     <section class="ag-section" id="about" aria-labelledby="about-t"><div class="ag-card-header"><h2 class="ag-card-title" id="about-t">About this report</h2></div>
-      <p>Purchase file · 7(a) Standard · $650,000.00 · SBA loan number issued June 10, 2024 · purchase request September 10, 2026 · purchase request</p><p>Rules used: Universal Purchase Package v5.3 for the request; SOP 50 10 7.1 for origination (by loan-number date); SOP 50 57 4 for servicing actions on or after November 1, 2025.</p><p class="ag-muted">Letter-paper layout. In the finished product this page prints and saves as a PDF with one button; this demonstration frame does not allow printing.</p>
+      <p>Purchase file · 7(a) Standard · $650,000.00 · SBA loan number issued June 10, 2024 · purchase request September 10, 2026 · purchase request</p><p>Rules used: Universal Purchase Package v5.3 for the request; SOP 50 10 7.1 for origination (by loan-number date); SOP 50 57 4 for servicing actions on or after November 1, 2025.</p><p class="ag-muted">Letter-paper layout. Download PDF opens your browser's print dialog; choose Save as PDF there. A built PDF with the findings file follows by October 13.</p>
     </section>
     <section class="ag-section" aria-label="Finding 1"><p><strong>Needs attention · CRITICAL: The equity injection cannot be traced to its source</strong></p><p>Found: required 85,000 per the authorization; settlement credit 85,000; an outflow of 85,000 left an account with no deposit, wire or check reference tying it to the closing. Gap: the money left the account but nothing shows it arriving at the closing (the outflow carries no account reference).</p><p>Where: <span class="ag-loc ag-mono">Loan_Authorization_Cobalt.docx, paragraph 6; SBA_Form_1050_Settlement_Sheet.docx, paragraph 3; Bank_Statement_Personal_Farrow-Lane_2024-07.csv, row 3, column 2</span></p><p>Fix: Obtain the bank statements for the months before closing showing the funds and the transfer. Add wire confirmations or cancelled checks linking the source account to the closing. Tie the amounts in the workbook&#x27;s Equity Injection Trace sheet.</p><p class="ag-muted">Rule: M5-TAB07-005 · UPP v5.3 (SBA PDF, footer &quot;v5.3 Effective August 10, 2026&quot;), p.7 (Tab 4)</p></section>
     <section class="ag-section" aria-label="Finding 2"><p><strong>Needs a person: Early defaults receive heightened SBA review of lender financials/projections, underwriting and equity injecti</strong></p><p>Found: Present: credit memo. Presence only; content not tested in v0.</p><p>Where: <span class="ag-loc ag-mono">Credit_Memo_Cobalt.docx</span></p><p>Fix: A person reviews the content against the rule.</p><p class="ag-muted">Rule: M5-TAB07-002 · SBA NGPC page; Starfield 2024-03; Windsor Advantage #2</p></section>
@@ -90,10 +91,11 @@
 
     <footer class="ag-page-footer">
       <span>This Readiness Review is a software tool the Lender uses to assist its own review of a loan file. It does not determine eligibility, creditworthiness, guaranty coverage, or compliance; it makes no representation to, and is not reviewed or endorsed by, the U.S. Small Business Administration. Under 13 CFR 120.180 the Lender remains solely responsible for compliance with SBA Loan Program Requirements in effect at the time of each action. Findings are indicators for the Lender&#x27;s judgment, not legal, accounting or credit advice. Citations refer to SBA documents by title, version and effective date; the Lender verifies the current text.</span>
-      <span class="ag-muted">Run id RR-202610080844-391a8068</span>
+      <span class="ag-muted">Run id RR-202610081445-391a8068</span>
       <span>Built on Elint — 7(a) Readiness Review</span>
     </footer>
   </main>
 </div>
+<script src="print.js"></script>
 </body>
 </html>
