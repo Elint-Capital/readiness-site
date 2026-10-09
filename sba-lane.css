@@ -15,3 +15,6 @@ main h1, .ag-h1, .ag-page-header h1 { font-size: 28px; line-height: 36px; }
 @media (max-width: 599px) { .ag-btn, .ag-btn--sm { min-height: 48px; } }
 /* Table header text: 4.5:1 on the header ground (axe color-contrast). */
 .ag-table th { color: var(--ag-text-2); }
+
+/* GLOSSARY-1: first-use chip — a text link under each SBA term, 48px target, never icon-only */
+.ag-term { display: inline-flex; align-items: center; min-height: 48px; padding: 0 12px; margin-inline-start: 4px; font-size: 18px; text-decoration: underline; }
