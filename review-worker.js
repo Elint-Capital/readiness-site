@@ -45,6 +45,7 @@ if not upload_name.lower().endswith('.zip'):
     zp = package_single(upload_name, zp.read_bytes(), Path('/in/file.zip'))
 review(zp, Path('/out/run'), '', None, in_browser=True)
 json.dumps({'contract': json.load(open('/out/run/findings.contract.json')),
+            'receipt': json.load(open('/out/run/receipt.json')),
             'html': open('/out/run/report.html').read()})`);
     postMessage({ type: "result", ms: Math.round(performance.now() - t), ...JSON.parse(out),
       xlsx: py.FS.readFile("/out/run/appended-workbook.xlsx"), docx: py.FS.readFile("/out/run/report.docx") });

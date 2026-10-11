@@ -32,6 +32,8 @@
       s.appendChild(el("p", "ag-muted", "Rule: " + f.rule_id + " · " + f.citation));
       out.appendChild(s);
     });
+    var r = res.receipt;
+    if (r) out.appendChild(el("p", "ag-muted ag-mono", "Run " + r.run_id + " · " + r.module + " · " + r.finished_at + " · engine " + r.engine_sha + " · rules " + r.rules_sha + " · " + Object.keys(r.counts).map(function (k) { return r.counts[k] + " " + k; }).join(", ")));
     say("Done in " + (res.ms / 1000).toFixed(1) + " seconds. " + c.findings.length + " findings.");
   }
   input.addEventListener("change", function () {
