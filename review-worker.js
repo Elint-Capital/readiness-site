@@ -48,7 +48,8 @@ json.dumps({'contract': json.load(open('/out/run/findings.contract.json')),
             'receipt': json.load(open('/out/run/receipt.json')),
             'html': open('/out/run/report.html').read()})`);
     postMessage({ type: "result", ms: Math.round(performance.now() - t), ...JSON.parse(out),
-      xlsx: py.FS.readFile("/out/run/appended-workbook.xlsx"), docx: py.FS.readFile("/out/run/report.docx") });
+      xlsx: py.FS.readFile("/out/run/appended-workbook.xlsx"), docx: py.FS.readFile("/out/run/report.docx"),
+      pdf: py.FS.readFile("/out/run/report.pdf"), v2: JSON.parse(py.FS.readFile("/out/run/findings.v2.json", { encoding: "utf8" })) });
   } catch (err) {
     postMessage({ type: "error", text: String(err) });
   }
