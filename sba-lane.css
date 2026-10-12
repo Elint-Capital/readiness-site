@@ -18,3 +18,28 @@ main h1, .ag-h1, .ag-page-header h1 { font-size: 28px; line-height: 36px; }
 
 /* GLOSSARY-1: first-use chip — a text link under each SBA term, 48px target, never icon-only */
 .ag-term { display: inline-flex; align-items: center; min-height: 48px; padding: 0 12px; margin-inline-start: 4px; font-size: 18px; text-decoration: underline; }
+
+/* S-071 TOKENS-SHELL-1, step 1: Avenida tokens (brief § 1–2). Ink on white, one brand blue for action, grey for structure,
+   square corners, hairlines. State colours are text on white or panel fill (>= 4.5:1), always with the word. Figtree and the
+   header/footer/breadcrumb follow; allgov.css stays byte-identical. */
+:root {
+  --ag-bg: #FFFFFF;
+  --ag-surface: #FFFFFF;
+  --ag-surface-2: #F5F5F3;
+  --ag-border: #DBDBDB;
+  --ag-border-strong: #605E5E;
+  --ag-text: #2F2E2E;
+  --ag-text-2: #605E5E;
+  --ag-text-muted: #605E5E;
+  --ag-accent: #004776;
+  --ag-accent-hover: #00365A;
+  --ag-accent-soft: #F5F5F3;
+  --ag-green-text: #1F7A3E;
+  --ag-amber-text: #8A5A12;
+  --ag-red-text: #B42318;
+  --ag-blue-text: #004776;
+  --ag-r-card: 0;
+  --ag-r-ctl: 0;
+  --ag-shadow: none;
+  --ag-s-section: 48px;
+}
