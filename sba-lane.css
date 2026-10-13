@@ -43,3 +43,12 @@ main h1, .ag-h1, .ag-page-header h1 { font-size: 28px; line-height: 36px; }
   --ag-shadow: none;
   --ag-s-section: 48px;
 }
+
+/* S-071 breadcrumb: Home, then the page; active crumb in the brand blue, 18px, 48px target. */
+.ag-breadcrumb ol{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:0;font-size:18px;color:#605E5E}
+.ag-breadcrumb li+li::before{content:"/";margin:0 12px;color:#DBDBDB}
+.ag-breadcrumb a{display:inline-flex;align-items:center;min-height:48px;color:#004776;text-decoration:underline}
+.ag-breadcrumb [aria-current]{color:#004776;font-weight:700}
+
+/* S-071 step 2: Figtree type (Avenida brief) */
+:root { --ag-font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
