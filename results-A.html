@@ -66,7 +66,7 @@
     <div class="ag-stats">
       <div class="ag-stat">
         <span class="ag-stat-label">Ready</span>
-        <span class="ag-stat-value ag-num">11</span>
+        <span class="ag-stat-value ag-num">12</span>
       </div>
       <div class="ag-stat">
         <span class="ag-stat-label">Need attention</span>
@@ -84,7 +84,7 @@
 
     <section class="ag-section" id="glance" aria-labelledby="glance-t"><div class="ag-card-header"><h2 class="ag-card-title" id="glance-t">At a glance</h2></div>
       <p class="ag-card-lead">Read this first. The findings follow, worst first.</p>
-      <p>11 ready · 1 need attention · 2 missing · 5 need a person.</p><h3 class="ag-h3">Top three things to fix first</h3><ol><li><strong>Borrower</strong>: A packager fee is mentioned but no compensation agreement (Form 159 <a class="ag-term" href="glossary.html#g-form-159">What does Form 159 mean?</a>) is in the file. Obtain SBA Form 159 and the engagement letter for the packager.</li><li><strong>Borrower</strong>: A packager fee is mentioned but Form 159 is missing. Obtain SBA Form 159 signed by the applicant, the packager and the lender, with the fee amount.</li><li><strong>Lender</strong>: An owner is not shown as a US citizen or national. Confirm the owner&#x27;s status from a passport, birth certificate or naturalization certificate.</li></ol><p>A person must look at 5 findings before this file goes to SBA.</p>
+      <p>12 ready · 1 need attention · 2 missing · 5 need a person.</p><h3 class="ag-h3">Top three things to fix first</h3><ol><li><strong>Borrower</strong>: A packager fee is mentioned but no compensation agreement (Form 159 <a class="ag-term" href="glossary.html#g-form-159">What does Form 159 mean?</a>) is in the file. Obtain SBA Form 159 and the engagement letter for the packager.</li><li><strong>Borrower</strong>: A packager fee is mentioned but Form 159 is missing. Obtain SBA Form 159 signed by the applicant, the packager and the lender, with the fee amount.</li><li><strong>Lender</strong>: An owner is not shown as a US citizen or national. Confirm the owner&#x27;s status from a passport, birth certificate or naturalization certificate.</li></ol><p>A person must look at 5 findings before this file goes to SBA.</p>
     </section>
     <section class="ag-section" id="rules" aria-labelledby="rules-t"><div class="ag-card-header"><h2 class="ag-card-title" id="rules-t">Rules used</h2></div>
       <p>SOP 50 10 8.1 <a class="ag-term" href="glossary.html#g-sop-50-10-8">What does SOP 50 10 8.1 mean?</a>, eff. 2026-10-01, incl. Technical Updates (Notice 5000-882227)</p><details><summary>Why this version</summary><p><span class="ag-loc ag-mono">M1-VER-002</span> · SOP 50 10 8.1; Information Notice 5000-882227 (eff. 2026-10-01) &#x27;will apply to all applications received by SBA on or after that date&#x27;; Information Notice 5000-880695 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Loan files with an application received by SBA on or after 2026-10-01 are governed by SOP 50 10 8.1 (S-040; applicability sentence read in Information Notice 5000-882227; Notice 5000-880695 says loan number issued, the later notice governs; a file that straddles the date goes to a person)</p></details>
@@ -94,7 +94,7 @@
       <p>We rebuild the spreads, add-backs, debt service coverage, global cash flow, projections against history, a stress test, the equity injection trace, the disbursement tie-out and the dates from the documents in the file. Every number is a formula, and every input carries the file, sheet and source line it came from.</p><p class="ag-muted">Sheets in the workbook:</p><ol><li>Inputs</li><li>Verify</li><li>Thresholds</li><li>Spreads</li><li>Add-backs</li><li>DSCR</li><li>Global Cash Flow</li><li>Projections vs Historical</li><li>Stress</li><li>Equity Injection Trace</li><li>Disbursement Tie-out</li><li>Dates</li><li>Findings</li><li>Sources</li></ol><div class="ag-expert-only"><p class="ag-muted">Verification table, from the demonstration file's workbook. Threshold entries cite their source and status; the stress test is a practice, not an SBA requirement.</p><div class="ag-table-wrap" tabindex="0" role="region" aria-label="Workbook verification table"><table class="ag-table ag-table--dense"><caption class="ag-sr-only">How each workbook number is verified to its source cell</caption><thead><tr><th scope="col">Sheet</th><th scope="col">Cell</th><th scope="col">Output</th><th scope="col">Formula</th><th scope="col">Depends on Inputs (key · locator)</th></tr></thead><tbody><tr><td>Spreads</td><td>B4</td><td>Spreads Gross profit 2023</td><td>=B2-B3</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5</td></tr><tr><td>Spreads</td><td>B6</td><td>Spreads EBITDA 2023</td><td>=B4-B5</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5 | fin.2023.opex · Historical_Financials.xlsx · sheet Income Statement · cell B6</td></tr><tr><td>Spreads</td><td>B9</td><td>Spreads Net income (computed) 2023</td><td>=B6-B7-B8</td><td>fin.2023.revenue · Historical_Financials.xlsx · sheet Income Statement · cell B4 | fin.2023.cogs · Historical_Financials.xlsx · sheet Income Statement · cell B5 | fin.2023.opex · Historical_Financials.xlsx · sheet Income Statement · cell B6 | fin.2023.interest · Historical_Financials.xlsx · sheet Income Statement · cell B7 | fin.2023.depreciation · Historical_Financials.xlsx · sheet Income Statement · cell B8</td></tr><tr><td>Spreads</td><td>C4</td><td>Spreads Gross profit 2024</td><td>=C2-C3</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5</td></tr><tr><td>Spreads</td><td>C6</td><td>Spreads EBITDA 2024</td><td>=C4-C5</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5 | fin.2024.opex · Historical_Financials.xlsx · sheet Income Statement · cell C6</td></tr><tr><td>Spreads</td><td>C9</td><td>Spreads Net income (computed) 2024</td><td>=C6-C7-C8</td><td>fin.2024.revenue · Historical_Financials.xlsx · sheet Income Statement · cell C4 | fin.2024.cogs · Historical_Financials.xlsx · sheet Income Statement · cell C5 | fin.2024.opex · Historical_Financials.xlsx · sheet Income Statement · cell C6 | fin.2024.interest · Historical_Financials.xlsx · sheet Income Statement · cell C7 | fin.2024.depreciation · Historical_Financials.xlsx · sheet Income Statement · cell C8</td></tr><tr><td>Spreads</td><td>D4</td><td>Spreads Gross profit 2025</td><td>=D2-D3</td><td>fin.2025.revenue · Historical_Financials.xlsx · sheet Income Statement · cell D4 | fin.2025.cogs · Historical_Financials.xlsx · sheet Income Statement · cell D5</td></tr><tr><td>Spreads</td><td>D6</td><td>Spreads EBITDA 2025</td><td>=D4-D5</td><td>fin.2025.revenue · Historical_Financials.xlsx · sheet Income Statement · cell D4 | fin.2025.cogs · Historical_Financials.xlsx · sheet Income Statement · cell D5 | fin.2025.opex · Historical_Financials.xlsx · sheet Income Statement · cell D6</td></tr></tbody></table></div></div>
     </section>
     <h2 class="ag-h2">Findings, worst first</h2>
-    <p class="ag-muted">19 findings, every one produced by the review engine on this file (engine output harbor-line, digest <span class="ag-loc ag-mono">18d252af0e06</span>). 18 rules in scope could not be tested on born-digital documents in this version and 48 do not apply to this file; neither is shown as a finding.</p>
+    <p class="ag-muted">20 findings, every one produced by the review engine on this file (engine output harbor-line, digest <span class="ag-loc ag-mono">a06ce26dcfd3</span>). 18 rules in scope could not be tested on born-digital documents in this version and 48 do not apply to this file; neither is shown as a finding.</p>
     <section class="ag-section" data-finding="M1-FEE-002" aria-labelledby="f1">
       <div class="ag-card-header"><h3 class="ag-card-title" id="f1">A packager fee is mentioned but no compensation agreement (Form 159) is in the file</h3></div>
       <p>Status: <strong>Missing</strong> <span class="ag-muted">Commonly cited in SBA reviews</span></p>
@@ -140,7 +140,7 @@
         <dt>How to fix it</dt><dd><ol><li>Confirm the owner&#x27;s status from a passport, birth certificate or naturalization certificate.</li><li>If the owner is not a citizen or national, the only cure is complete divestiture before the loan number is issued (see M1-ELIG-005); record it with an updated ownership chart.</li><li>Re-run the review after the ownership chart and Form 1919 <a class="ag-term" href="glossary.html#g-form-1919">What does Form 1919 mean?</a>s are updated.</li></ol></dd>
       </dl>
       <details><summary>What does this mean?</summary><p>SBA changed the ownership rule in 2026. A file that would have passed last year can fail now.</p></details>
-      <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-ELIG-004</span> · Policy Notice 5000-876441 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Effective date of 5000-876441 is 2026-03-01 for loans receiving SBA loan numbers on/after that date (SBA page states effective date; loan-number wording from NAGGL)</p></details>
+      <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-ELIG-004</span> · Policy Notice 5000-876441 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Policy Notice 5000-876441 is effective 2026-03-01 (the effective date is stated in the SBA notice)</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-ELIG-004.</p>
     </section>
     <section class="ag-section" data-finding="M1-CRED-001" aria-labelledby="f4">
@@ -287,8 +287,24 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-ELIG-015</span> · 13 CFR 120.110(q) (prior Federal loan default causing a loss makes the business ineligible unless waived); CAIVRS search mechanism is SOP 50 10 8 (PRACTICE, not traced to SBA text) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Applicant, its Associates and businesses they previously owned or controlled must not have defaulted on a Federal loan or Federally assisted financing that caused the government a loss (13 CFR 120.110(q), waivable); the SOP-prescribed evidence is a CAIVRS check clear for the business and each principal (SOP text not traced to SBA text)</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-ELIG-015.</p>
     </section>
-    <section class="ag-section" data-finding="M1-FORM-001" aria-labelledby="f13">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f13">Form 1919 is present for every required party</h3></div>
+    <section class="ag-section" data-finding="M1-ELIG-020" aria-labelledby="f13">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f13">The 2026-03-01 citizenship and residency requirements apply to loans that receive an SBA loan number on or aft</h3></div>
+      <p>Status: <strong>Present (not tested)</strong></p>
+      <dl class="ag-kv ag-kv--left">
+        <dt>What we checked</dt><dd>Whether the file holds: loan-system export</dd>
+        <dt>What we found</dt><dd>Present: loan-system export. Presence only; content not tested in v0.</dd>
+        <dt>Where in the file</dt><dd><span class="ag-loc ag-mono">Harbor_Line_Loan_Export.csv</span></dd>
+        <dt>Why it matters</dt><dd>The 2026-03-01 citizenship and residency requirements apply to loans that receive an SBA loan number on or after that date (the loan-number trigger comes from NAGGL wording; the SBA notice text does not state it)</dd>
+        <dt>Why believe this</dt><dd><span class="ag-muted">2 corpus entries name this failure.</span><ul><li><strong>PI-016</strong> (PIIA-CORPUS): Required forms missing or incorrect (SBA Forms, citizenship, CAIVRS)</li><li><strong>TW-012</strong> (TRAINING-CORPUS): Citizenship/ownership eligibility (non-U.S. owners, foreign entities, LPR status)</li></ul></dd>
+        <dt>Rule status</dt><dd class="ag-muted">PRACTICE (not an SBA rule) - NAGGL notice summary of Policy Notice 5000-876441; the loan-number trigger has no line in the SBA text — rule status PRACTICE</dd>
+        
+      </dl>
+      <details><summary>What does this mean?</summary><p>This check passed on the documents in the file. The page it rests on is shown above.</p></details>
+      <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-ELIG-020</span> · PRACTICE (not an SBA rule) - NAGGL notice summary of Policy Notice 5000-876441; the loan-number trigger has no line in the SBA text <strong>Rule status: PRACTICE</strong></p><p class="ag-muted">The rule, as our rulebook reads it: The 2026-03-01 citizenship and residency requirements apply to loans that receive an SBA loan number on or after that date (the loan-number trigger comes from NAGGL wording; the SBA notice text does not state it)</p></details>
+      <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-ELIG-020.</p>
+    </section>
+    <section class="ag-section" data-finding="M1-FORM-001" aria-labelledby="f14">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f14">Form 1919 is present for every required party</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>A Form 1919 (02/2025 edition, signed) for the applicant and every 20%+ owner</dd>
@@ -303,8 +319,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-FORM-001</span> · SBA Form 1919 page (edition 2025-03-19, OMB 3245-0348 — read on legacy.sba.gov); LGPC checklist v2.0 Tab 1 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: SBA Form 1919 Borrower Information Form: the current edition is the one SBA posts dated 2025-03-19 (form revision 02/2025; OMB 3245-0348), completed by the small business applying for a 7(a) loan and submitted to the lender (SBA form page). Expiration date (2027-06-30 per a bank-hosted copy) not shown on the SBA page; older editions (2024-05-30, 2023-09-20, 2020-11-30) are superseded. Currency: the Form 1919 is dated within 120 days of submission to SBA (LGPC Checklist July 2026 Tab 1; see M2-CHK-003); the day count does not belong to this edition rule</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-FORM-001.</p>
     </section>
-    <section class="ag-section" data-finding="M1-VER-002" aria-labelledby="f14">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f14">Rules used: SOP 50 10 8.1, eff. 2026-10-01, incl. Technical Updates (Notice 5000-882227)</h3></div>
+    <section class="ag-section" data-finding="M1-VER-002" aria-labelledby="f15">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f15">Rules used: SOP 50 10 8.1, eff. 2026-10-01, incl. Technical Updates (Notice 5000-882227)</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>The E-Tran loan-number date</dd>
@@ -319,8 +335,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-VER-002</span> · SOP 50 10 8.1; Information Notice 5000-882227 (eff. 2026-10-01) &#x27;will apply to all applications received by SBA on or after that date&#x27;; Information Notice 5000-880695 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Loan files with an application received by SBA on or after 2026-10-01 are governed by SOP 50 10 8.1 (S-040; applicability sentence read in Information Notice 5000-882227; Notice 5000-880695 says loan number issued, the later notice governs; a file that straddles the date goes to a person)</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-VER-002.</p>
     </section>
-    <section class="ag-section" data-finding="M1-COLL-004" aria-labelledby="f15">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f15">Insurance binder names the lender as loss payee</h3></div>
+    <section class="ag-section" data-finding="M1-COLL-004" aria-labelledby="f16">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f16">Insurance binder names the lender as loss payee</h3></div>
       <p>Status: <strong>Ready</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>An insurance binder on pledged collateral naming the lender as loss payee (loans over $50,000.00)</dd>
@@ -335,8 +351,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-COLL-004</span> · SOP 50 10 8 §A Ch.5 ¶Insurance 1 (Hazard Insurance) PDF p.92-93, citing 13 CFR 120.160(c) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Hazard insurance is required on all assets pledged as collateral for 7(a) loans greater than $50,000.00; full replacement cost (or maximum insurable value if unavailable); mortgagee clause (real estate) or lender&#x27;s loss payable clause (personal property) in favor of the lender; at least 10 days&#x27; prior written notice of cancellation; if hazard insurance is not available the loan cannot be approved; SBA Express/Export Express lenders may waive with the reason documented</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-COLL-004.</p>
     </section>
-    <section class="ag-section" data-finding="M1-CRED-009" aria-labelledby="f16">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f16">Historical and current financials: income statement and balance sheet dated within 120 days of submission</h3></div>
+    <section class="ag-section" data-finding="M1-CRED-009" aria-labelledby="f17">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f17">Historical and current financials: income statement and balance sheet dated within 120 days of submission</h3></div>
       <p>Status: <strong>Present (not tested)</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: historical financial statements</dd>
@@ -351,8 +367,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-CRED-009</span> · LGPC 7(a) Loan Submission Checklist July 2026 p.1-2, Tabs 6-7 (not for Small Loans; 120 days of submission to SBA; FYE statements or returns for the last 3 years) <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Historical and current financials: income statement and balance sheet dated within 120 days of submission; three years historical statements/returns; affiliate financials likewise</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-CRED-009.</p>
     </section>
-    <section class="ag-section" data-finding="M1-CRED-010" aria-labelledby="f17">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f17">Owner Financial Statement for each 20%+ owner and each proposed guarantor except Supplemental Guarantors, sign</h3></div>
+    <section class="ag-section" data-finding="M1-CRED-010" aria-labelledby="f18">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f18">Owner Financial Statement for each 20%+ owner and each proposed guarantor except Supplemental Guarantors, sign</h3></div>
       <p>Status: <strong>Present (not tested)</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: personal financial statement</dd>
@@ -367,8 +383,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-CRED-010</span> · LGPC 7(a) Loan Submission Checklist July 2026 p.1, Tab 4 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: Owner Financial Statement (business or personal, as applicable; SBA Form 413 or lender form) for each 20%+ owner (including spouse and minor-child assets) and each proposed guarantor except Supplemental Guarantors, signed and dated within 120 days of submission to SBA (the v2.0 checklist said 90)</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-CRED-010.</p>
     </section>
-    <section class="ag-section" data-finding="M1-FORM-002" aria-labelledby="f18">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f18">A separate Form 1919 is completed and signed for each Co-Borrower</h3></div>
+    <section class="ag-section" data-finding="M1-FORM-002" aria-labelledby="f19">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f19">A separate Form 1919 is completed and signed for each Co-Borrower</h3></div>
       <p>Status: <strong>Present (not tested)</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: SBA Form 1919</dd>
@@ -383,8 +399,8 @@
       <details><summary>The rule we checked against</summary><p><span class="ag-loc ag-mono">M1-FORM-002</span> · SOP 50 10 8 Section B Ch.1, SBA Form 1919 (PDF p.143); SBA Form 1919 (02/2025) pp.1-2 <strong>Rule status: VERIFIED</strong></p><p class="ag-muted">The rule, as our rulebook reads it: A separate Form 1919 is completed and signed for each Co-Borrower; the ownership table names every entity owning at least 20% of the Applicant and the natural persons who own those entities, and at least 51% of the Beneficial Owners; a demographic section is completed for each individual holding 20 percent or more</p></details>
       <p>Not sure what to do with this finding? Call us through your Avenida contact and mention rule M1-FORM-002.</p>
     </section>
-    <section class="ag-section" data-finding="M1-FORM-006" aria-labelledby="f19">
-      <div class="ag-card-header"><h3 class="ag-card-title" id="f19">Tax return transcripts obtained and the Applicant&#x27;s financial data reconciled to them before first 7 disbursem</h3></div>
+    <section class="ag-section" data-finding="M1-FORM-006" aria-labelledby="f20">
+      <div class="ag-card-header"><h3 class="ag-card-title" id="f20">Tax return transcripts obtained and the Applicant&#x27;s financial data reconciled to them before first 7 disbursem</h3></div>
       <p>Status: <strong>Present (not tested)</strong></p>
       <dl class="ag-kv ag-kv--left">
         <dt>What we checked</dt><dd>Whether the file holds: IRS tax transcripts (4506-C)</dd>
@@ -405,7 +421,7 @@
 
     <footer class="ag-page-footer">
       <span>This Readiness Review is a software tool the Lender uses to assist its own review of a loan file. It does not determine eligibility, creditworthiness, guaranty coverage, or compliance; it makes no representation to, and is not reviewed or endorsed by, the U.S. Small Business Administration. Under 13 CFR 120.180 the Lender remains solely responsible for compliance with SBA Loan Program Requirements in effect at the time of each action. Findings are indicators for the Lender&#x27;s judgment, not legal, accounting or credit advice. Citations refer to SBA documents by title, version and effective date; the Lender verifies the current text.</span>
-      <span class="ag-muted">Run id RR-202610140351-18d252af</span>
+      <span class="ag-muted">Run id RR-202610140550-a06ce26d</span>
       <span>Built on Elint — 7(a) Readiness Review</span>
     </footer>
   </main>
