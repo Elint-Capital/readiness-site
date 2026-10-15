@@ -33,16 +33,21 @@ onmessage = async (e) => {
     await ready;
     say("Reading the file");
     py.FS.mkdirTree("/in");
-    py.FS.writeFile("/in/upload.bin", new Uint8Array(e.data.bytes));
-    py.globals.set("upload_name", String(e.data.name || "file.zip"));
+    const files = e.data.files || [{ name: e.data.name, bytes: e.data.bytes }];
+    files.forEach((f, i) => py.FS.writeFile("/in/upload" + i + ".bin", new Uint8Array(f.bytes)));
+    py.globals.set("upload_names", files.map((f) => String(f.name || "file.zip")));
     const t = performance.now();
     const out = py.runPython(`
 import json
 from pathlib import Path
-from engine.run import review, package_single
-zp = Path('/in/upload.bin')
-if not upload_name.lower().endswith('.zip'):
-    zp = package_single(upload_name, zp.read_bytes(), Path('/in/file.zip'))
+from engine.run import review, package_single, package_many
+names = list(upload_names.to_py())
+if len(names) > 1:
+    zp = package_many([(n, Path('/in/upload%d.bin' % i).read_bytes()) for i, n in enumerate(names)], Path('/in/file.zip'))
+elif names[0].lower().endswith('.zip'):
+    zp = Path('/in/upload0.bin')
+else:
+    zp = package_single(names[0], Path('/in/upload0.bin').read_bytes(), Path('/in/file.zip'))
 review(zp, Path('/out/run'), '', None, in_browser=True)
 json.dumps({'contract': json.load(open('/out/run/findings.contract.json')),
             'receipt': json.load(open('/out/run/receipt.json')),

@@ -85,11 +85,13 @@
     var all = input.files;
     if (!all || !all.length) return;
     if (mapEl) buildMap(all);
-    var file = pickFirst(all);
+    var picked = Array.prototype.slice.call(all);
+    var one = picked.length === 1 || !picked.some(function (f) { return !/\.zip$/i.test(f.name); });
+    var file = one ? pickFirst(all) : picked[0];
     if (!file) { out.textContent = ""; say("No ZIP or PDF in this pick. The documents are listed above for a person to read."); return; }
     out.textContent = "";
     say("Reading the file");
-    file.arrayBuffer().then(function (bytes) {
+    Promise.all((one ? [file] : picked).map(function (f) { return f.arrayBuffer().then(function (b) { return { name: f.name, bytes: b }; }); })).then(function (list) {
       if (worker) worker.terminate();
       worker = new Worker("review-worker.js?base=vendor/", { type: "module" });
       worker.onmessage = function (e) {
@@ -98,7 +100,7 @@
         else if (e.data.type === "error") say("The review engine could not start. " + e.data.text);
       };
       worker.onerror = function () { say("The review engine could not start in this browser."); };
-      worker.postMessage({ type: "run", name: file.name, bytes: bytes }, [bytes]);
+      worker.postMessage({ type: "run", files: list }, list.map(function (x) { return x.bytes; }));
     });
   });
 })();
