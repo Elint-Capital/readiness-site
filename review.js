@@ -54,6 +54,17 @@
     }
     return names;
   }
+  // Reader 1 (S-080): JSZip in a same-origin Worker lists size and intake refusals; the hand reader above is the fallback.
+  function zipList(bytes) {
+    return new Promise(function (resolve) {
+      var w;
+      try { w = new Worker("zip-reader.js"); } catch (x) { resolve(null); return; }
+      var done = function (v) { try { w.terminate(); } catch (x) {} resolve(v); };
+      w.onmessage = function (e) { done(e.data && e.data.ok ? e.data : null); };
+      w.onerror = function () { done(null); };
+      w.postMessage({ bytes: bytes.slice(0) });
+    });
+  }
   function drawMap(rows) {
     mapEl.textContent = "";
     mapEl.appendChild(el("p", "", rows.length + " documents in this file. The review reads the first ZIP or PDF; the rest are listed so a person can read them."));
@@ -75,7 +86,13 @@
       if (k === "ZIP") {
         jobs.push(f.arrayBuffer().then(function (b) {
           rows.push({ name: f.name, kind: k, size: size(f.size), read: read });
-          zipNames(b).forEach(function (n) { rows.push({ name: f.name + " / " + n, kind: kind(n), size: "", read: f === first ? "Yes" : "Listed, a person reads it" }); });
+          return zipList(b).then(function (r) {
+            if (!r) { zipNames(b).forEach(function (n) { rows.push({ name: f.name + " / " + n, kind: kind(n), size: "", read: f === first ? "Yes" : "Listed, a person reads it" }); }); return; }
+            r.files.forEach(function (x) {
+              var rd = r.package ? "Not read: " + r.package : x.refused ? "Not read: " + x.refused : f === first ? "Yes" : "Listed, a person reads it";
+              rows.push({ name: f.name + " / " + x.name, kind: kind(x.name), size: size(x.size), read: rd });
+            });
+          });
         }));
       } else rows.push({ name: f.name, kind: k, size: size(f.size), read: read });
     });
