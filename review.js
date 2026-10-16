@@ -65,6 +65,17 @@
       w.postMessage({ bytes: bytes.slice(0) });
     });
   }
+  // Reader 2 (S-080): JSZip in a same-origin Worker reads a Word file's text; every line keeps its place (paragraph, or table row and cell).
+  function docxRead(bytes) {
+    return new Promise(function (resolve) {
+      var w;
+      try { w = new Worker("docx-reader.js"); } catch (x) { resolve(null); return; }
+      var done = function (v) { try { w.terminate(); } catch (x) {} resolve(v); };
+      w.onmessage = function (e) { done(e.data && e.data.ok ? e.data : null); };
+      w.onerror = function () { done(null); };
+      w.postMessage({ bytes: bytes.slice(0) });
+    });
+  }
   function drawMap(rows) {
     mapEl.textContent = "";
     mapEl.appendChild(el("p", "", rows.length + " documents in this file. The review reads the first ZIP or PDF; the rest are listed so a person can read them."));
@@ -93,6 +104,13 @@
               rows.push({ name: f.name + " / " + x.name, kind: kind(x.name), size: size(x.size), read: rd });
             });
           });
+        }));
+      } else if (k === "Word" && f !== first) {
+        var row = { name: f.name, kind: k, size: size(f.size), read: read };
+        rows.push(row);
+        jobs.push(f.arrayBuffer().then(docxRead).then(function (r) {
+          if (!r) return;
+          row.read = r.refused ? "Not read: " + r.refused : "Text read in your browser, " + r.items.length + " passages, each with its place in the file. A person checks them against the rules.";
         }));
       } else rows.push({ name: f.name, kind: k, size: size(f.size), read: read });
     });
