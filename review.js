@@ -76,6 +76,17 @@
       w.postMessage({ bytes: bytes.slice(0) });
     });
   }
+  // Reader 3 (S-080): JSZip in a same-origin Worker reads an Excel file's cells; every line keeps its place (sheet and cell).
+  function xlsxRead(bytes) {
+    return new Promise(function (resolve) {
+      var w;
+      try { w = new Worker("xlsx-reader.js"); } catch (x) { resolve(null); return; }
+      var done = function (v) { try { w.terminate(); } catch (x) {} resolve(v); };
+      w.onmessage = function (e) { done(e.data && e.data.ok ? e.data : null); };
+      w.onerror = function () { done(null); };
+      w.postMessage({ bytes: bytes.slice(0) });
+    });
+  }
   function drawMap(rows) {
     mapEl.textContent = "";
     mapEl.appendChild(el("p", "", rows.length + " documents in this file. The review reads the first ZIP or PDF; the rest are listed so a person can read them."));
@@ -111,6 +122,13 @@
         jobs.push(f.arrayBuffer().then(docxRead).then(function (r) {
           if (!r) return;
           row.read = r.refused ? "Not read: " + r.refused : "Text read in your browser, " + r.items.length + " passages, each with its place in the file. A person checks them against the rules.";
+        }));
+      } else if (k === "Excel" && f !== first) {
+        var xrow = { name: f.name, kind: k, size: size(f.size), read: read };
+        rows.push(xrow);
+        jobs.push(f.arrayBuffer().then(xlsxRead).then(function (r) {
+          if (!r) return;
+          xrow.read = r.refused ? "Not read: " + r.refused : "Cells read in your browser, " + r.items.length + " filled cells, each with its sheet and cell. A person checks them against the rules.";
         }));
       } else rows.push({ name: f.name, kind: k, size: size(f.size), read: read });
     });
