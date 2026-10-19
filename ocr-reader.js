@@ -9,6 +9,18 @@ function magic(b) {
   if (u[0] === 0xff && u[1] === 0xd8 && u[2] === 0xff) return "jpeg";
   return "";
 }
+function pixels(b, kind) {
+  var v = new DataView(b), n = b.byteLength, i;
+  if (kind === "png") return n < 24 ? Infinity : v.getUint32(16) * v.getUint32(20);
+  for (i = 2; i + 9 < n;) {
+    if (v.getUint8(i) !== 0xff) { i++; continue; }
+    var m = v.getUint8(i + 1);
+    if (m === 0xff) { i++; continue; }
+    if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return v.getUint16(i + 5) * v.getUint16(i + 7);
+    i += 2 + (m === 0xd8 || (m >= 0xd0 && m <= 0xd7) || m === 0x01 ? 0 : v.getUint16(i + 2));
+  }
+  return Infinity;
+}
 var base = new URL("ocr/", self.location.href).href;
 self.onmessage = function (e) {
   var bytes = e.data.bytes, n = e.data.n || 1;
@@ -16,6 +28,7 @@ self.onmessage = function (e) {
   if (bytes.byteLength > MAX_IMAGE) return no("the image is larger than 25 MB");
   var kind = magic(bytes);
   if (!kind) return no("this is not a PNG or JPEG image");
+  if (!(pixels(bytes, kind) <= MAX_PIXELS)) return no("the image has more than 40 million pixels, or its size cannot be read");
   Tesseract.createWorker("eng", 1, { workerPath: base + "worker.min.js", corePath: base, langPath: base, gzip: true, workerBlobURL: false })
     .then(function (w) {
       return w.recognize(new Blob([bytes], { type: "image/" + kind })).then(function (r) {
