@@ -112,7 +112,7 @@
             if (!r) { zipNames(b).forEach(function (n) { rows.push({ name: f.name + " / " + n, kind: kind(n), size: "", read: f === first ? "Yes" : "Listed, a person reads it" }); }); return; }
             r.files.forEach(function (x) {
               var rd = r.package ? "Not read: " + r.package : x.refused ? "Not read: " + x.refused : f === first ? "Yes" : "Listed, a person reads it";
-              rows.push({ name: f.name + " / " + x.name, kind: kind(x.name), size: size(x.size), read: rd });
+              rows.push({ name: f.name + " / " + x.name + (x.tab ? " (UPP tab " + x.tab + ")" : ""), kind: kind(x.name), size: size(x.size), read: rd });
             });
           });
         }));

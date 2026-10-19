@@ -11,6 +11,15 @@ function why(name, usize, csize) {
   if (!ALLOWED[ext]) return (ext ? "." + ext : "this") + " is not a file type this review reads";
   return "";
 }
+// UPP tab 1-10 from a folder such as "Tab 07 - Servicing"; mirrors engine/engine/ingest.py tab_of. 0 = no folder says one.
+function tabOf(path) {
+  var segs = path.replace(/\\/g, "/").split("/").slice(0, -1);
+  for (var i = 0; i < segs.length; i++) {
+    var m = /^(?:tab|section)?[\s_.-]*0*(\d{1,2})(?:[\s_.)-]|$)/i.exec(segs[i].trim());
+    if (m && +m[1] >= 1 && +m[1] <= 10) return +m[1];
+  }
+  return 0;
+}
 self.onmessage = function (e) {
   var bytes = e.data.bytes;
   if (bytes.byteLength > MAX_ZIP) { self.postMessage({ ok: true, package: "the package is larger than 200 MB", files: [] }); return; }
@@ -20,7 +29,7 @@ self.onmessage = function (e) {
       if (f.dir) return;
       var d = f._data || {}, u = d.uncompressedSize || 0, c = d.compressedSize || 0;
       total += u;
-      files.push({ name: path, size: u, refused: why(path, u, c) });
+      files.push({ name: path, size: u, refused: why(path, u, c), tab: tabOf(path) });
     });
     var pkg = "";
     if (files.length > MAX_ENTRIES) pkg = "the package holds more than 500 files";
