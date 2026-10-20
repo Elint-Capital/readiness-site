@@ -30,6 +30,11 @@
       s.appendChild(el("p", "ag-loc ag-mono", f.locators.join("; ")));
       if (f.cure.steps.length) s.appendChild(el("p", "", f.cure.label + ": " + f.cure.steps.join(" ")));
       s.appendChild(el("p", "ag-muted", "Rule: " + f.rule_id + " · " + f.citation));
+      var d = el("details", "");
+      d.appendChild(el("summary", "", "What does this mean?"));
+      d.appendChild(el("p", "", "This finding comes from rule " + f.rule_id + ", which reads: " + f.citation));
+      s.appendChild(d);
+      s.appendChild(el("p", "", "Not sure what to do with this finding? Call us through your Avenida contact and mention rule " + f.rule_id + "."));
       out.appendChild(s);
     });
     var r = res.receipt;
