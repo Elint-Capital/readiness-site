@@ -11,12 +11,13 @@ function why(name, usize, csize) {
   if (!ALLOWED[ext]) return (ext ? "." + ext : "this") + " is not a file type this review reads";
   return "";
 }
-// UPP tab 1-10 from a folder such as "Tab 07 - Servicing"; mirrors engine/engine/ingest.py tab_of. 0 = no folder says one.
+// UPP tab 1-8, or 9 for a "CPC" folder, from a folder such as "Tab 07 - Use of Proceeds"; mirrors engine/engine/ingest.py tab_of. 0 = no folder says one.
 function tabOf(path) {
   var segs = path.replace(/\\/g, "/").split("/").slice(0, -1);
   for (var i = 0; i < segs.length; i++) {
+    if (/^cpc(?:[\s_.)-]|$)/i.test(segs[i].trim())) return 9;
     var m = /^(?:tab|section)?[\s_.-]*0*(\d{1,2})(?:[\s_.)-]|$)/i.exec(segs[i].trim());
-    if (m && +m[1] >= 1 && +m[1] <= 10) return +m[1];
+    if (m && +m[1] >= 1 && +m[1] <= 8) return +m[1];
   }
   return 0;
 }
